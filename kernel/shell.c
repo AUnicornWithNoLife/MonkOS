@@ -18,6 +18,7 @@
 #include <kernel/mem/heap.h>
 #include <kernel/mem/paging.h>
 #include <kernel/x86/cpu.h>
+//#include <kernel/basic.h>
 
 #define TTY_CONSOLE  0
 
@@ -31,6 +32,8 @@ static bool cmd_display_pci();
 static bool cmd_display_pcie();
 static bool cmd_switch_to_keycodes();
 static bool cmd_test_heap();
+static bool cmd_display_credits();
+static bool cmd_display_basic();
 
 /// Shell mode descriptor.
 typedef struct mode
@@ -87,6 +90,8 @@ static struct cmd commands[] =
     { "pcie", "Show PCIexpress configuration", cmd_display_pcie },
     { "kc", "Switch to keycode display mode", cmd_switch_to_keycodes },
     { "heap", "Test heap allocation", cmd_test_heap },
+    { "credits", "Lists everyone who has worked on ths", cmd_display_credits },
+    { "basic", "PENDING", cmd_display_basic },
 };
 
 static int
@@ -202,6 +207,20 @@ cmd_test_heap()
     return true;
 }
 
+static bool cmd_display_credits()
+{
+    tty_printf(TTY_CONSOLE, "Nada \n");
+
+    return true;
+}
+
+static bool cmd_display_basic()
+{
+    //interpret();
+
+    return true;
+}
+
 static bool
 command_exec(const char *cmd)
 {
@@ -220,7 +239,7 @@ command_exec(const char *cmd)
 static void
 command_prompt()
 {
-    tty_print(TTY_CONSOLE, "> ");
+    tty_print(TTY_CONSOLE, "$ ~> ");
 }
 
 static void

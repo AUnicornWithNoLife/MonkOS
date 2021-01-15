@@ -51,9 +51,9 @@ kmain()
     enable_interrupts();
 
     // Display a welcome message on the virtual console.
-    tty_set_textcolor(TTY_CONSOLE, TEXTCOLOR_LTGRAY, TEXTCOLOR_BLACK);
+    tty_set_textcolor(TTY_CONSOLE, TEXTCOLOR_WHITE, TEXTCOLOR_BLUE);
     tty_clear(TTY_CONSOLE);
-    tty_print(TTY_CONSOLE, "Welcome to \033[e]MonkOS\033[-] (v0.1).\n");
+    tty_print(TTY_CONSOLE, "Welcome to \033[e]MonkOS\033[-] (v0.1).\n\n\n");
 
     // Launch the interactive test shell.
     kshell();
