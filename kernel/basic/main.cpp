@@ -1,10 +1,8 @@
 //============================================================================
-/// @file       basic.c
-/// @brief      A basic language interator
+/// @file       main.cpp
+/// @brief      Simple kernel shell for testing purposes.
 //
 // Copyright 2021 AUnicornWithNoLife.
-// Use of this source code is governed by a BSD-style license that can
-// be found in the MonkOS LICENSE file.
 //============================================================================
 
 #include <core.h>
@@ -19,9 +17,9 @@
 #include <kernel/mem/paging.h>
 #include <kernel/x86/cpu.h>
 
-#define TTY_CONSOLE  0
+#include <kernel/basic/hlib/io.h>
 
-static bool interpret()
+void main()
 {
-    tty_print(TTY_CONSOLE, kb_getchar());
+    
 }

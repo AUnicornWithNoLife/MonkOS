@@ -18,7 +18,8 @@
 #include <kernel/mem/heap.h>
 #include <kernel/mem/paging.h>
 #include <kernel/x86/cpu.h>
-//#include <kernel/basic.h>
+
+#include <kernel/basic/main.h>
 
 #define TTY_CONSOLE  0
 
